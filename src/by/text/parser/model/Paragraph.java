@@ -1,29 +1,28 @@
 package by.text.parser.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Paragraph {
 
-    private String sentence;
-    private String[] paragraph1;
+    private List<Sentence> sentences;
 
-    public Paragraph(String[] paragraph1) {
-        this.paragraph1 = paragraph1;
-        if (paragraph1 == null) {
-            System.out.println("NullPointerException");
+    public Paragraph(String paragraph) {
+        String[] sentencesContents = paragraph.split("[/.!?]");
+        List<Sentence> sentences = new ArrayList<>();
+        for (String content : sentencesContents) {
+            Sentence sentence = new Sentence(content);
+            sentences.add(sentence);
         }
-        for (int i = 0; i < paragraph1.length; i ++) {
-            String[] sentences = paragraph1[i].split("[.!?]");
-            for (String sentence:sentences) {
-                System.out.println(sentence);
-            }
-        }
+        this.sentences = sentences;
     }
 
-    public String getSentence() {
-        return sentence;
+    public List<Sentence> getSentences() {
+        return sentences;
     }
 
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
+    public void setSentences(List<Sentence> sentences) {
+        this.sentences = sentences;
     }
 
 }
