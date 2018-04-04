@@ -17,6 +17,16 @@ public class Paragraph {
         this.sentences = sentences;
     }
 
+    public String getPar() {
+        String paragraph = " ";
+            for (Sentence sent : sentences) {
+                String sen = sent.getContent();
+                paragraph = String.join(".", sen);
+
+            }
+        return paragraph;
+    }
+
     public List<Sentence> getSentences() {
         return sentences;
     }

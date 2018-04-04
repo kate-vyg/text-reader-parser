@@ -15,10 +15,16 @@ public class Text {
             paragraphs.add(paragraph);
         }
         this.paragraphs = paragraphs;
+
     }
 
-    public String textConstructor(String paragraphs) {
-        return String.join( "\n", paragraphs);
+    public String getText() {
+        String text = "";
+            for (Paragraph par : paragraphs) {
+                String paragraph = par.getPar();
+                text = String.join("\n", paragraph);
+            }
+        return text;
     }
 
     public List<Paragraph> getParagraphs() {
