@@ -5,26 +5,23 @@ import java.util.List;
 
 public class Paragraph {
 
-    private List<Sentence> sentences;
+    private List<Sentence> sentences = new ArrayList<>();
 
     public Paragraph(String paragraph) {
         String[] sentencesContents = paragraph.split("[/.!?]");
-        List<Sentence> sentences = new ArrayList<>();
         for (String content : sentencesContents) {
             Sentence sentence = new Sentence(content);
             sentences.add(sentence);
         }
-        this.sentences = sentences;
     }
 
-    public String getPar() {
-        String paragraph = " ";
-            for (Sentence sent : sentences) {
-                String sen = sent.getContent();
-                paragraph = String.join(".", sen);
+    public String getAsString() {
+        StringBuilder result = new StringBuilder("");
+        for (Sentence sentence : sentences) {
+            result.append(sentence.getContent()).append(".");
 
-            }
-        return paragraph;
+        }
+        return result.toString();
     }
 
     public List<Sentence> getSentences() {

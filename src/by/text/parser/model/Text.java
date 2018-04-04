@@ -5,26 +5,21 @@ import java.util.List;
 
 public class Text {
 
-    private List<Paragraph> paragraphs;
+    private List<Paragraph> paragraphs = new ArrayList<>();
 
     public Text(String text) {
-        String[] par = text.split("[\\n]");
-        List<Paragraph> paragraphs = new ArrayList<>();
-        for (String content : par) {
-            Paragraph paragraph = new Paragraph(content);
-            paragraphs.add(paragraph);
+        String[] paragraphsContents = text.split("[\\n]");
+        for (String content : paragraphsContents) {
+            paragraphs.add(new Paragraph(content));
         }
-        this.paragraphs = paragraphs;
-
     }
 
-    public String getText() {
-        String text = "";
-            for (Paragraph par : paragraphs) {
-                String paragraph = par.getPar();
-                text = String.join("\n", paragraph);
-            }
-        return text;
+    public String getAsString() {
+        StringBuilder result = new StringBuilder("");
+        for (Paragraph paragraph : paragraphs) {
+            result.append(paragraph.getAsString()).append("\n");
+        }
+        return result.toString();
     }
 
     public List<Paragraph> getParagraphs() {
