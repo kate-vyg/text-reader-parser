@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 
 public class FrequencyCalculator {
 
-    public static Map<String, Integer> textToMap(String textAsString) {
+    public static Map<String, Integer> countWords(String text) {
         Map<String, Integer> result = new HashMap<>();
-        textAsString = textAsString.toLowerCase();
-        String[] words = textAsString.split("\\W+");
+        text = text.toLowerCase();
+        String[] words = text.split("\\W+");
         for (String word : words) {
             if (result.containsKey(word)) {
                 result.put(word, result.get(word) + 1);

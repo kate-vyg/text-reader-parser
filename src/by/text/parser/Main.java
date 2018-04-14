@@ -13,7 +13,7 @@ public class Main {
         Text text = new Text(textStringContent);
         String finalText = text.getAsString();
         TextUtils.writeToFile(finalText, Paths.get("E:/java/output.txt"));
-        Map<String, Integer> map = FrequencyCalculator.textToMap(textStringContent);
+        Map<String, Integer> map = FrequencyCalculator.countWords(textStringContent);
         map = FrequencyCalculator.sortDescendingly(map);
         System.out.println(map);
     }
