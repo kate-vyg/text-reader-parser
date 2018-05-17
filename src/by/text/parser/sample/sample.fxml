@@ -17,12 +17,12 @@
       <Accordion />
       <ScrollPane layoutY="56.0" prefHeight="553.0" prefWidth="385.0">
          <content>
-            <TextArea fx:id="textView" prefHeight="540.0" prefWidth="365.0" />
+            <TextArea fx:id="readText" prefHeight="540.0" prefWidth="365.0" />
          </content>
       </ScrollPane>
       <ScrollPane layoutX="385.0" layoutY="56.0" prefHeight="553.0" prefWidth="385.0">
          <content>
-            <TextArea fx:id="listView" prefHeight="540.0" prefWidth="365.0" />
+            <TextArea fx:id="frequencyCalculator" prefHeight="540.0" prefWidth="365.0" />
          </content>
       </ScrollPane>
    </children>

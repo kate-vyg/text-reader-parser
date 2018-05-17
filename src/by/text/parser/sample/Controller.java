@@ -18,10 +18,10 @@ public class Controller {
     private Button selectFileButton;
 
     @FXML
-    private TextArea textView;
+    private TextArea readText;
 
     @FXML
-    private TextArea listView;
+    private TextArea frequencyCalculator;
 
     private FileChooser fileChooser = new FileChooser();
 
@@ -31,13 +31,13 @@ public class Controller {
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null) {
             String content = TextUtils.readAsString(Paths.get(selectedFile.getPath()));
-            textView.setText(content);
-            textView.setWrapText(true);
+            readText.setText(content);
+            readText.setWrapText(true);
 
             Map<String, Integer> map = FrequencyCalculator.countWords(content);
             map = FrequencyCalculator.sortDescendingly(map);
-            listView.setText(map.toString());
-            listView.setWrapText(true);
+            frequencyCalculator.setText(map.toString());
+            frequencyCalculator.setWrapText(true);
         }
     }
 }
