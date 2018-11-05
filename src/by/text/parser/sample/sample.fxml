@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="770.0" style="-fx-background-color: #EDF9F4;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.text.parser.sample.Controller">
+   <children>
+      <Button fx:id="selectFileButton" layoutX="572.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="148.0" style="-fx-background-color: #44B68C;" text="Open file" textFill="#fcfcf8">
+         <font>
+            <Font name="Arial Italic" size="18.0" />
+         </font>
+      </Button>
+      <Accordion />
+      <ScrollPane layoutY="56.0" prefHeight="553.0" prefWidth="385.0">
+         <content>
+            <TextArea fx:id="readText" prefHeight="540.0" prefWidth="365.0" />
+         </content>
+      </ScrollPane>
+      <ScrollPane layoutX="385.0" layoutY="56.0" prefHeight="553.0" prefWidth="385.0">
+         <content>
+            <TextArea fx:id="frequencyCalculator" prefHeight="540.0" prefWidth="365.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
